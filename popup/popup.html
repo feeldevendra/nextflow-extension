@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NextFlow — Settings</title>
+  <link rel="stylesheet" href="../popup/popup.css" />
+</head>
+<body>
+  <div class="container" role="dialog" aria-labelledby="title" aria-modal="true">
+    <header class="header">
+      <div class="branding">
+        <!-- Simple inline SVG icon — scales nicely -->
+        <svg class="logo" viewBox="0 0 128 128" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#00c3ff"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs>
+          <rect rx="24" width="128" height="128" fill="url(#lg)"/>
+          <path d="M36 28 L36 100 L92 64 Z" fill="#fff"/>
+        </svg>
+        <div>
+          <h1 id="title">NextFlow</h1>
+          <p class="sub">Auto-scroll Shorts · Policy-aware</p>
+        </div>
+      </div>
+      <div class="status-pill" id="pageStatus" aria-live="polite">Checking...</div>
+    </header>
+
+    <main class="main">
+      <section class="card">
+        <label class="row" for="toggleAuto">
+          <div>
+            <div class="label">Auto-scroll</div>
+            <div class="hint">Automatically move to the next Short when current ends</div>
+          </div>
+          <div class="control">
+            <input id="toggleAuto" type="checkbox" role="switch" aria-checked="false" />
+            <span class="switch" aria-hidden="true"></span>
+          </div>
+        </label>
+
+        <label class="row" for="toggleSkipAds">
+          <div>
+            <div class="label">Skip ads (opt-in)</div>
+            <div class="hint">If a skippable ad appears, click Skip when visible (use responsibly).</div>
+          </div>
+          <div class="control">
+            <input id="toggleSkipAds" type="checkbox" role="switch" aria-checked="false" />
+            <span class="switch" aria-hidden="true"></span>
+          </div>
+        </label>
+
+        <label class="row slider-row" for="delayRange">
+          <div>
+            <div class="label">Delay after end</div>
+            <div class="hint">Wait time (ms) before moving to next Short</div>
+          </div>
+          <div class="control">
+            <input id="delayRange" type="range" min="0" max="3000" step="100" />
+            <div class="range-value" id="delayValue" aria-live="polite">500 ms</div>
+          </div>
+        </label>
+
+        <div class="row">
+          <div>
+            <div class="label">Behavior</div>
+            <div class="hint">You can pause/resume from toolbar anytime.</div>
+          </div>
+          <div class="control small">
+            <button id="openOptions" class="btn-ghost" aria-label="Open options">Advanced</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card small-note" aria-hidden="false">
+        <strong>Privacy</strong>
+        <p>Settings are stored locally in your browser. No watch history or personal data is transmitted.</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">v1.0.0</div>
+      <div class="footer-right">
+        <button id="toggleQuick" class="btn" aria-pressed="false">Quick: Toggle</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../popup/popup.js"></script>
+</body>
+</html>

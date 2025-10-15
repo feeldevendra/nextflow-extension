@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NextFlow — Options</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="wrap" role="main" aria-labelledby="pageTitle">
+    <header class="topbar">
+      <h1 id="pageTitle">NextFlow — Settings</h1>
+      <div class="ver">v1.0.0</div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Playback & Behavior</h2>
+        <div class="field">
+          <label for="optAuto">Auto-scroll</label>
+          <div class="controls">
+            <input id="optAuto" type="checkbox" />
+            <small class="hint">Automatically move to next Short when current ends</small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="optDelay">Delay after end (ms)</label>
+          <div class="controls">
+            <input id="optDelay" type="number" min="0" max="10000" step="50" />
+            <small class="hint">Milliseconds to wait before switching</small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="optLoopSafe">Only on Wi-Fi (optional)</label>
+          <div class="controls">
+            <input id="optLoopSafe" type="checkbox" />
+            <small class="hint">Prevent auto actions on cellular networks</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Ad Handling</h2>
+        <div class="field">
+          <label for="optSkipAds">Skip ads (opt-in)</label>
+          <div class="controls">
+            <input id="optSkipAds" type="checkbox" />
+            <small class="hint">If skippable button is visible, extension may click it.</small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="optAdPause">Pause during unskippable ads</label>
+          <div class="controls">
+            <input id="optAdPause" type="checkbox" />
+            <small class="hint">Pause auto-scroll while unskippable ads play</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Data & Backups</h2>
+        <div class="field">
+          <label>Export settings</label>
+          <div class="controls">
+            <button id="btnExport" class="btn">Export JSON</button>
+            <small class="hint">Download your current settings (local file).</small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fileImport">Import settings</label>
+          <div class="controls">
+            <input id="fileImport" type="file" accept="application/json" />
+            <button id="btnImport" class="btn-ghost">Apply file</button>
+            <small class="hint">Choose a previously exported JSON file to restore settings.</small>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Reset</label>
+          <div class="controls">
+            <button id="btnReset" class="btn-danger">Reset to defaults</button>
+            <small class="hint">This will clear extension settings back to initial state.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel small">
+        <h2>About & Privacy</h2>
+        <p>NextFlow does not collect or transmit viewing data. Settings are stored locally (chrome.storage). Before publishing, a full privacy policy will be available.</p>
+        <p>
+          <a id="privacyLink" href="#" target="_blank" rel="noopener">Privacy Policy</a> ·
+          <a id="githubLink" href="#" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Built by Devendra · <span id="statusText">Ready</span></div>
+      <div>
+        <button id="btnSave" class="btn">Save</button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
